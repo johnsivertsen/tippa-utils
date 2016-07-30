@@ -21,7 +21,7 @@ object Build extends Build {
 		val url = "jdbc:h2:tcp://localhost/mem:demo"
 		val jdbcDriver = "org.h2.Driver"
 		val slickDriver = "slick.driver.H2Driver"
-		val pkg = "db"
+		val pkg = "models"
 		toError(r.run("slick.codegen.SourceCodeGenerator", cp.files, Array(slickDriver, jdbcDriver, url, outputDir, pkg), s.log))
 		val fname = outputDir + "Tables.scala"
 		Seq(file(fname))
